@@ -11,6 +11,8 @@ import logImg from '../assets/images/logo.svg'
 import '../style/auth.scss'
 import { Button } from '../components/Button'
 
+
+
 export function NewRoom() {
     const { user } = useAuth()
     const history  = useHistory()

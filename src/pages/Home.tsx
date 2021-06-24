@@ -11,6 +11,13 @@ import googleIconImg from '../assets/images/google-icon.svg'
 import '../style/auth.scss'
 import { Button } from '../components/Button'
 
+
+
+
+
+
+
+
 export function Home() {
     const history = useHistory()
     const { user, singInWithGoogle } = useAuth()
