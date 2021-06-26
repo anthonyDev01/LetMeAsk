@@ -31,7 +31,7 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState('')
   const roomId = params.id
 
-  const { title, question } = useRoom(roomId)
+  const { title, questions } = useRoom(roomId)
 
 
   async function handleSandQuestion(event: FormEvent) {
@@ -83,7 +83,7 @@ export function Room() {
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
-          {question.length > 0 && <span>{question.length} pergunta(s)</span>}
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
         <form onSubmit={handleSandQuestion}>
@@ -102,7 +102,7 @@ export function Room() {
           </div>
         </form>
         <div className="question-list">
-          {question.map(question => {
+          {questions.map(question => {
             return (
               <Question
                 key={question.id}

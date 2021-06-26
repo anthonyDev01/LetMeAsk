@@ -28,7 +28,7 @@ export function AdminRoom() {
 
   const roomId = params.id
 
-  const { title, question } = useRoom(roomId)
+  const { title, questions } = useRoom(roomId)
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -59,12 +59,12 @@ export function AdminRoom() {
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
-          {question.length > 0 && <span>{question.length} pergunta(s)</span>}
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
 
         <div className="question-list">
-          {question.map(question => {
+          {questions.map(question => {
             return (
               <Question
                 key={question.id}

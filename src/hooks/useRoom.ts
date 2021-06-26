@@ -31,7 +31,7 @@ type QuestionType = {
 
 export function useRoom(roomId: string) {
   const { user } = useAuth()
-  const [question, setQuestion] = useState<QuestionType[]>([])
+  const [questions, setQuestion] = useState<QuestionType[]>([])
   const [title, setTitle] = useState()
 
   useEffect(() => {
@@ -63,5 +63,5 @@ export function useRoom(roomId: string) {
     }
   }, [roomId, user?.id])
 
-  return { question, title }
+  return { questions, title }
 }
