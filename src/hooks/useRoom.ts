@@ -17,16 +17,17 @@ type FirebaseQuestion = Record<string, {
 
 
 type QuestionType = {
-  id: string,
+  id: string
   author: {
-    name: string,
-    avatar: string,
+    name: string
+    avatar: string
   }
-  content: string,
-  isHighlighted: boolean,
-  isAnswered: boolean,
-  likeCount: number,
-  likeId: string | undefined,
+
+  content: string
+  isAnswered: boolean
+  isHighlighted: boolean
+  likeCount: number
+  likeId: string | undefined
 }
 
 export function useRoom(roomId: string) {
@@ -50,7 +51,7 @@ export function useRoom(roomId: string) {
           isHighlighted: value.isHighlighted,
           isAnswered: value.isAnswered,
           likeCount: Object.values(value.likes ?? {}).length,
-          likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
+          likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0]
         }
       })
       setTitle(databaseRoom.title)
@@ -61,6 +62,7 @@ export function useRoom(roomId: string) {
     return () => {
       roomRef.off('value')
     }
+    
   }, [roomId, user?.id])
 
   return { questions, title }
