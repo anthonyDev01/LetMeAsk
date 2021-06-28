@@ -11,7 +11,6 @@ type FirebaseQuestion = Record<string, {
   isAnswered: boolean,
 }>
 
-
 type QuestionType = {
   id: string,
   author: {
@@ -23,7 +22,7 @@ type QuestionType = {
   isAnswered: boolean,
 }
 
-export function useRoom(roomId: string){
+export function useRoom(roomId: string) {
   const [question, setQuestion] = useState<QuestionType[]>([])
   const [title, setTitle] = useState()
 
@@ -48,5 +47,5 @@ export function useRoom(roomId: string){
     })
   }, [roomId])
 
-  return {question, title}
+  return { question, title }
 }

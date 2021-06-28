@@ -12,10 +12,9 @@ import '../style/auth.scss'
 import { Button } from '../components/Button'
 
 
-
 export function NewRoom() {
     const { user } = useAuth()
-    const history  = useHistory()
+    const history = useHistory()
     const [newRoom, setNewRoom] = useState('')
 
     async function handleCreateRoom(event: FormEvent) {

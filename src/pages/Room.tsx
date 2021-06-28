@@ -4,12 +4,8 @@ import { useParams } from 'react-router'
 import logImg from '../assets/images/logo.svg'
 import { Button } from '../components/Button'
 
-
-
 import { Question } from '../components/Question'
 import { RoomCode } from '../components/RoomCode'
-
-
 
 import { useAuth } from '../hooks/useAuth'
 import { useRoom } from '../hooks/useRoom'
@@ -21,9 +17,6 @@ type RoomParams = {
   id: string,
 }
 
-
-
-
 export function Room() {
   const { user } = useAuth()
   const params = useParams<RoomParams>()
@@ -31,9 +24,6 @@ export function Room() {
   const roomId = params.id
 
   const { title, question } = useRoom(roomId)
-
-
-
 
   async function handleSandQuestion(event: FormEvent) {
     event.preventDefault()
